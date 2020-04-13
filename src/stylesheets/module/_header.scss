@@ -1,0 +1,156 @@
+.header{
+    background-color: $header-background;
+    color:$header-text;
+    a{
+        color:$header-text;
+    }
+    &__logo{
+        font-family: 'commerceB';
+        font-size: rem(30);
+    }
+    &__search{
+        background-color: $gray-400;
+        border-radius: rem(20);
+        overflow: hidden;
+        position: relative;
+        &-input{
+            background-color: transparent;
+            text-align: center;
+            color:$white;
+            height: auto;
+            &.form-control{
+                width:100%;
+            }
+            @include placeholder{
+                color: $white;
+                font-weight: $font-weight-light;
+            }
+            &:focus{
+                background-color: $white;
+                color:$header-text;
+                box-shadow: none;
+                border-color: $gray-400;
+                border-radius: rem(20);
+            }
+        }
+        &-submit{
+            position: absolute;
+            top: 3px;
+            left: 0;
+            border: 0;
+            background-color: transparent;
+            color: white;
+            transform: scaleX(-1);
+            padding: 0;
+            height: 100%;
+            width: rem(40);
+        }
+    }
+    //MENU
+    &__toggle-menu {        
+        height: 100%;
+        width:100%;
+        height: rem(40);
+        width: rem(40);
+        display: inline-block;
+        .toggle-icon {
+            background-color: $primary;
+            &::before,
+            &::after {
+                background-color: $primary;
+            }
+        }
+    }
+}
+.toggle-menu {
+    .toggle-icon {
+        position: absolute;
+        width: 2rem;
+        height: 2px;
+        border-radius: 20px;
+        transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+        top:rem(30);
+        left:0;
+        &::before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: 2px;
+            border-radius: 20px;
+            left: 0;
+            transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        &::before {
+            top: -8px
+        }
+        &:after {
+            top: 8px
+        }
+    }
+    &:hover {
+        color: $header-text;
+        span {
+            border-bottom: 0
+        }
+    }
+    &.active {
+        >span {
+            background-color: transparent;
+            &::before,
+            &:after {
+                top: 0px;
+            }
+            &::before {
+                @include transform(rotate(-225deg));
+            }
+            &:after {
+                @include transform(rotate(225deg))
+            }
+        }
+    }
+}
+@include media-breakpoint-down(sm) {
+    .header{
+        &__right {
+            width:100%;
+            margin-top:rem(10)
+        }
+        &__search{
+            width:100%
+        }
+        .switch-language{
+            position: absolute;
+            top:rem(15);
+            right:0
+        }
+        .navbar{
+            padding:0
+        }
+        .navbar-brand{
+            padding-top:0;
+            padding-bottom:0;
+        }
+        &__dropdown-menu li.parent ul{
+            position: static;
+            box-shadow: none;
+            background-color: #ddd;
+            li{
+                border-color: $white;
+            }
+        }
+        .switch-language{
+            top:10px;
+        }
+    }
+    .toggle-menu .toggle-icon{
+        top:rem(22)
+    }
+    #menu.slinky-menu{
+        top:50%;
+        min-width: rem(300);
+    }
+    .wpml-ls-legacy-list-horizontal a.wpml-ls-link{
+        padding:3px 0
+    }
+}

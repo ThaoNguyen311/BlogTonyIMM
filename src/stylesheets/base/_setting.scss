@@ -1,0 +1,60 @@
+@function rem($pixels, $context: 16) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1rem;
+}
+
+$container-max-widths: ( sm: 540px, md: 750px, lg: 970px, xl: 1170px) !default;
+
+/*COLOR*/
+
+$primary:#000099;
+$black: #000;
+$white: #fff;
+
+/*BODY*/
+
+$font-family-base:'Roboto',
+sans-serif;
+$body-bg: $white;
+$body-color: $black;
+$border-color: #909090;
+
+/*HEADER*/
+
+$header-background:$white;
+$header-text:$black;
+
+/*MENU*/
+
+$menu-bg: $white;
+$menu-color:$black;
+$menu-border-color: #dfdfdf;
+$menu-bg-hover:$primary;
+$menu-color-hover:$white;
+$nav-link-padding-y: .7rem;
+$nav-link-padding-x: 1rem;
+
+/*BUTTON*/
+
+$btn-font-size:rem(14);
+$btn-border-radius:rem(30);
+$input-btn-padding-x:1.2rem;
+
+/*FOOTER*/
+
+$footer-bacground:$white;
+$footer-text:$black;
+//footer top
+$footer-top-background:$primary;
+$footer-top-text:$white;
+//footer bottom
+$footer-bottom-background:$white;
+$footer-bottom-text:$black;
+$footer-link:$black;
+
+

@@ -1,0 +1,67 @@
+.link__group {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  a {
+    color: $body-color;
+    font-family: "commerceB";
+    display: block;
+    text-align: center;
+  }
+  li {
+    margin: 0 0.5rem;
+    &:hover a,
+    &.active a {
+      text-decoration: none;
+    }
+  }
+}
+.link__style01 {
+  .link__item {
+    &:hover a,
+    &.active a {
+      background-color: $primary;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+  a {
+    font-size: rem(24);
+    border-radius: 5px;
+    padding-top: 5px;
+  }
+}
+.link__style02 {
+  li {
+    &:hover a,
+    &.active a {
+      border-bottom-color: $red;
+    }
+  }
+  a {
+    font-size: rem(18);
+    padding: 0 1rem;
+    border-bottom: 1px solid transparent;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .link__item a {
+    background-color: $primary;
+    color: $white;
+  }
+}
+@include media-breakpoint-down(md) {
+}
+@include media-breakpoint-down(sm) {
+  .link__item {
+    width: auto;
+    a {
+      font-size: 1.1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  .link__style02 a{
+      padding:0;
+  }
+}

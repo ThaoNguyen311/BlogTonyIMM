@@ -1,0 +1,28 @@
+@import 'base/setting';
+@import "./node_modules/bootstrap/scss/bootstrap";
+@import "./node_modules/slick-carousel/slick/slick.scss";
+@import "./node_modules/bootstrap-select/dist/css/bootstrap-select";
+@import "./lib/elegant-icon";
+
+/*base*/
+
+@import 'base/mixins';
+@import 'base/base';
+@import 'base/button';
+@import 'base/space';
+@import 'base/custom';
+@import 'base/font';
+@import 'base/general';
+@import 'base/normallize';
+
+/*component*/
+@import 'component/link-group';
+@import 'component/list-news';
+@import 'component/sidebar-news';
+@import 'component/blog-detail';
+@import 'component/pagination';
+
+/*modules*/
+@import 'module/header';
+@import 'module/footer';
+@import 'module/menu';

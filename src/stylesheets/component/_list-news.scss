@@ -1,0 +1,10 @@
+.blog {
+  &__title a {
+    &:hover {
+      color: $primary;
+    }
+  }
+  &__date {
+    color: #808285;
+  }
+}

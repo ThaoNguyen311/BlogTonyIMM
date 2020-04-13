@@ -1,0 +1,15 @@
+.btn__loadmore{
+    background-color: $gray-200;
+    color:$primary;
+    padding:.7rem 2.5rem;
+    border-radius: 5px;
+    margin:1rem auto;
+    display: inline-block;
+    @include transition;
+    min-width: rem(215);
+    &:hover{
+        background-color: $primary;
+        color:$white;
+        text-decoration: none
+    }
+}

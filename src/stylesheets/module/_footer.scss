@@ -1,0 +1,68 @@
+.footer {
+  &__top {
+    background-color: $footer-top-background;
+    color: $footer-top-text;
+    a {
+      color: $footer-top-text;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &__logo {
+    font-size: rem(24);
+    font-family: "commerceB";
+  }
+  &__social {
+    a {
+      display: block;
+      font-size: 1rem;
+      width: rem(35);
+      height: rem(35);
+      line-height: rem(37);
+      border-radius: 100%;
+      color: $footer-top-background;
+      background-color: $footer-top-text;
+      text-align: center;
+      border:1px solid $footer-top-text;
+      @include transition();
+      &:hover {
+        text-decoration: none;
+        color: $footer-top-text;
+        background-color: $footer-top-background
+      }
+    }
+  }
+  &__title {
+    font-size: rem(18);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+  }
+  &__bottom {
+    background-color: $footer-bottom-background;
+    color: $footer-bottom-text;
+    a {
+      color: $footer-link;
+    }
+  }
+  &__link ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      padding: rem(5) 0;
+    }
+  }
+}
+@include media-breakpoint-down(lg) {
+  .footer__title {
+    font-size: 1rem;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .footer {
+    &__wrap {
+      flex-direction: column;
+    }
+  }
+}

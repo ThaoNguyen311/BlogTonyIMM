@@ -1,0 +1,103 @@
+// required styles
+.slinky-menu {
+    overflow: hidden;
+    transform: translateZ(0);
+    >ul {
+        left: 0;
+        position: relative;
+        transform: translateZ(0);
+        padding:0;
+    }
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+    }
+    ul {
+        width: 100%;
+    }
+    a {
+        align-items: center;
+        display: flex;
+        span {
+            flex: 1;
+            line-height: 1.4;
+        }
+    }
+    li ul {
+        display: none;
+        left: 100%;
+        position: absolute;
+        top: 0;
+        padding: 0;
+    }
+    .header {
+        display: flex;
+        .title {
+            flex: 1;
+            line-height: 1.4;
+            margin: 0;
+            order: 1;
+        }
+    }
+}
+
+// default theme
+#menu {
+    background: $menu-bg;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+    display: none;
+    min-width: 20rem;
+    box-shadow: 0 1px 3px #e1e1e1;
+    border: 1px solid #dfdfdf;
+    li a {
+        font-weight: $font-weight-bold;
+        padding: $nav-link-padding-y $nav-link-padding-x;
+        font-size: rem(20);
+        &.back {
+            width: 100%;
+            line-height: 1.2;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    li {
+        line-height: 1;
+        border-bottom: 1px solid $menu-border-color;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    a:not(.back) {
+        color: $menu-color;
+        @include hover-focus-active {
+            background: $menu-bg-hover;
+            color: $menu-color-hover;
+        }
+    }
+    .next::after{
+        @include icon_font02('\35', 1.5rem, 1rem);
+    }
+    .back::before {
+        @include icon_font02('\4a', 1.5rem, 1rem);
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #menu li a {
+        font-size: 1rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #menu {
+        min-width: 400px;
+    }
+}
