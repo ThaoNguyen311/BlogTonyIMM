@@ -12,7 +12,7 @@ $container-max-widths: ( sm: 540px, md: 750px, lg: 970px, xl: 1170px) !default;
 
 /*COLOR*/
 
-$primary:#000099;
+$primary:#031563;
 $black: #000;
 $white: #fff;
 
@@ -57,4 +57,7 @@ $footer-bottom-background:$white;
 $footer-bottom-text:$black;
 $footer-link:$black;
 
+//BREADCRUMB
+$breadcrumb-padding-y:.2rem;
+$breadcrumb-padding-x:1rem;
 
