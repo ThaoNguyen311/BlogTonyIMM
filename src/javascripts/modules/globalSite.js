@@ -1,40 +1,40 @@
 import bowser from 'bowser';
-class globalSite{
-	static showContentWhenPageLoadFinish(){
-		setTimeout(function() {
-			$('.over-loader').fadeOut('slow');
-		}, 500);
-	}
+class globalSite {
+    static showContentWhenPageLoadFinish() {
+        setTimeout(function() {
+            $('.over-loader').fadeOut('slow');
+        }, 500);
+    }
 
-	static checkDevice(){
-		let html = $('html');
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			html.addClass('touch');
-		}else{
-			html.addClass('no-touch');
-		}
-	}
-	static detectBrowser() {
-		var browserName = bowser.name;
-		var browserVersion = bowser.version;
-		var $body = $('html')
-		if (browserName === 'Chrome'){
-			$body.addClass('chrome');
-		}
-		if (browserName === 'Firefox'){
-			$body.addClass('firefox');
-		}
-		if (browserName === 'Internet Explorer'){
-			$body.addClass('ie');
-		}
-		if (browserName === 'Microsoft Edge'){
-			$body.addClass('edge');
-		}
-		if (browserName === 'Safari'){
-			$body.addClass('safari');
-		}
-	}
-	static compareSameHeight() {
+    static checkDevice() {
+        let html = $('html');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            html.addClass('touch');
+        } else {
+            html.addClass('no-touch');
+        }
+    }
+    static detectBrowser() {
+        var browserName = bowser.name;
+        var browserVersion = bowser.version;
+        var $body = $('html')
+        if (browserName === 'Chrome') {
+            $body.addClass('chrome');
+        }
+        if (browserName === 'Firefox') {
+            $body.addClass('firefox');
+        }
+        if (browserName === 'Internet Explorer') {
+            $body.addClass('ie');
+        }
+        if (browserName === 'Microsoft Edge') {
+            $body.addClass('edge');
+        }
+        if (browserName === 'Safari') {
+            $body.addClass('safari');
+        }
+    }
+    static compareSameHeight() {
         function setSameHeight(e) {
             if ($(window).innerWidth() > 767) {
                 $('.content-row').each(function() {
@@ -56,8 +56,25 @@ class globalSite{
         setSameHeight($('.content_6'));
         setSameHeight($('.content_7'));
         setSameHeight($('.content_8'));
-	}
-	static openMenu() {
+    }
+    static scrollTop() {
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#to_top').fadeIn();
+                } else {
+                    $('#to_top').fadeOut();
+                }
+            });
+            $('#to_top').click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+        })
+    }
+    static openMenu() {
         $('.toggle-menu').click(function() {
             $('#menu').toggleClass('d-block');
             $('.header__menu').toggleClass('menu-active');

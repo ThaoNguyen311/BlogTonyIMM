@@ -1,12 +1,12 @@
 .switch-language {
-    ul{
+    ul {
         padding: 0;
-        margin:0;
+        margin: 0;
         list-style: none;
     }
     li {
-        a{
-            color:$header-text;
+        a {
+            color: $header-text;
             margin: 0 10px;
         }
         &.wpml-ls-current-language {
@@ -31,6 +31,7 @@
         padding: 0;
     }
 }
+
 .image-box {
     position: relative;
     overflow: hidden;
@@ -52,4 +53,41 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#to_top {
+    position: fixed;
+    width: rem(35);
+    height: rem(35);
+    line-height: rem(35);
+    text-align: center;
+    bottom: 3rem;
+    right: rem(20);
+    font-size: 0;
+    display: none;
+    z-index: 10;
+    &:before,
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid $white;
+        position: absolute;
+        top: calc((100% - 8px)/2);
+        left: calc((100% - 15px)/2);
+    }
+    &:after {
+        border-bottom-color: rgba($white, 0.5);
+        @include transform(translateY(-4px));
+    }
+    @include media-breakpoint-down(sm) {
+        display: none !important;
+    }
 }

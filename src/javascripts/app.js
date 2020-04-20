@@ -12,11 +12,11 @@ globalSite.showContentWhenPageLoadFinish();
 globalSite.detectBrowser();
 globalSite.compareSameHeight();
 globalSite.openMenu();
+globalSite.scrollTop();
 
 for (var i = 0; i < moduleElements.length; i++) {
-	const el = moduleElements[i]
-	const name = el.getAttribute('data-module')
-	const Module = require(`./modules/${name}`).default;
-	new Module(el);
+    const el = moduleElements[i]
+    const name = el.getAttribute('data-module')
+    const Module = require(`./modules/${name}`).default;
+    new Module(el);
 }
-
